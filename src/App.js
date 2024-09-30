@@ -1,24 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import TestCards from './componets/TestCards';
 
 function App() {
+     const cards = [
+      {
+        fullName : "Sarah Dole",
+        userName : "@sarahdole",
+        description : "I've been searching for high-quality abstract images for my design projects, and I'm thrilled to have found this platform. The variety and depth of creativity are astounding!",
+        imge : "./assets/profile-thumbnail.png",
+
+      }
+     ]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {cards.map((data) => (
+      <TestCards
+      fullName = {data.fullName}
+      userName = {data.userName}
+      description = {data.description}
+      imge = {data.imge} />
+      ))}
     </div>
+
   );
 }
 
